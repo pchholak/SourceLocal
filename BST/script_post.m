@@ -1,4 +1,4 @@
-function sSrcMeg = script2(SubjectNames, iSubj)
+function sSrcMeg = script_post(SubjectNames, iSubj)
 
 % Process: Select data files in: */*
 sFiles = bst_process('CallProcess', 'process_select_files_data', [], [], ...
