@@ -6,7 +6,7 @@ end
 % The protocol name has to be a valid folder name (no spaces, no weird characters...)
 ProtocolName = 'Perception';
 
-Subjects = 7;
+Subjects = 11;
 data_dir = '/home/anakin/Data/MEG/Perception/';
 reports_dir = '/home/anakin/Research/Results/';
 fname_raw = 'run_tsss.fif';
@@ -18,17 +18,8 @@ for iSubj=Subjects
     name = sprintf('sub%02d', iSubj);
     SubjectNames{end+1} = name;
     NoiseFiles{end+1} = [data_dir, name, '/', fname_empty];
-    if strcmp(name, 'sub08')
-        RawFiles{end+1} = { ...
-            [data_dir, name, '/', 'run_tsss_1.fif'], ...
-            [data_dir, name, '/', 'run_tsss_2.fif']};
-        RawEventFiles{end+1} = { ...
-            [data_dir, name, '/', 'events_MarkerFile-bst_1.mat'], ...
-            [data_dir, name, '/', 'events_MarkerFile-bst_2.mat']};
-    else
-        RawFiles{end+1} = [data_dir, name, '/', fname_raw];
-        RawEventFiles{end+1} = [data_dir, name, '/', fname_event];
-    end
+    RawFiles{end+1} = [data_dir, name, '/', fname_raw];
+    RawEventFiles{end+1} = [data_dir, name, '/', fname_event];
 end
 
 %% ============ Load raw files, preprocess and import epochs =============
@@ -41,12 +32,8 @@ for iSubj=1:length(SubjectNames)
     if ~isempty(sSubject)
         db_delete_subjects(iSubject);
     end
-    
-    if strcmp(SubjectNames{iSubj}, 'sub08')
-        sFiles = script_pre_sub8(SubjectNames, RawFiles, NoiseFiles, RawEventFiles, iSubj);
-    else
-        sFiles = script_pre(SubjectNames, RawFiles, NoiseFiles, RawEventFiles, iSubj);
-    end
+
+    sFiles = script_pre(SubjectNames, RawFiles, NoiseFiles, RawEventFiles, iSubj);
     
     % Save and display report
     ReportFile = bst_report('Save', []);
@@ -57,6 +44,5 @@ for iSubj=1:length(SubjectNames)
 end
 
 %% ============================= Open report =============================
-% Save and display report
-ReportFile = bst_report('Save', []);
+% Display report
 bst_report('Open', ReportFile);
