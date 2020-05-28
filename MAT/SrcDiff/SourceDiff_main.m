@@ -20,7 +20,7 @@ for p=1:nscouts
 end
 info.scout_vert = V;
 
-% Absolute difference in coherence of areas marked by vertices V
+%% Absolute difference in coherence of areas marked by vertices V
 names = cell(1, nsub);
 ACm = zeros(1, nsub); Cm = ACm;
 for iSubj=subj_indices
