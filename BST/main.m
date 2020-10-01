@@ -8,8 +8,8 @@ end
 ProtocolName = 'Perception';
 
 Subjects = 13:17;
-data_dir = '/home/anakin/Data/MEG/Perception/';
-reports_dir = '/home/anakin/Research/Results/';
+data_dir = '/home/wilson/data/perception/';
+reports_dir = '/home/wilson/research/results/perception/';
 fname_raw = 'run_tsss.fif';
 fname_empty = 'emptyroom_tsss.fif';
 fname_event = 'events_MarkerFile-bst.mat';
@@ -36,19 +36,19 @@ end
 for iSubj=1:length(SubjectNames)
     % Start display report for each subject
     bst_report('Start');
-    
+
     % If subject already exists: delete it
     [sSubject, iSubject] = bst_get('Subject', SubjectNames{iSubj});
     if ~isempty(sSubject)
         db_delete_subjects(iSubject);
     end
-    
+
     if strcmp(SubjectNames{iSubj}, 'sub08')
         sFiles = script_pre_sub8(SubjectNames, RawFiles, NoiseFiles, RawEventFiles, iSubj);
     else
         sFiles = script_pre(SubjectNames, RawFiles, NoiseFiles, RawEventFiles, iSubj);
     end
-    
+
     % Save and display report
     ReportFile = bst_report('Save', []);
     if ~isempty(reports_dir) && ~isempty(ReportFile)
