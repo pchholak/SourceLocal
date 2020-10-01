@@ -8,8 +8,8 @@ end
 ProtocolName = 'Perception';
 
 Subjects = 13:17;
-data_dir = '/home/rommel/data/MEG/Perception/';
-reports_dir = '/home/rommel/research/results/';
+data_dir = '/home/wilson/data/perception/';
+reports_dir = '/home/wilson/research/results/perception/';
 fname_raw = 'run_tsss.fif';
 fname_empty = 'emptyroom_tsss.fif';
 fname_event = 'events_MarkerFile-bst.mat';
