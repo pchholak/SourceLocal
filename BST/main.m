@@ -1,5 +1,7 @@
 %% ============================ Initial setup ============================
-xxx
+close all
+clear
+clc
 % Start brainstorm, if not open already
 if ~brainstorm('status')
     brainstorm nogui
@@ -7,9 +9,9 @@ end
 % The protocol name has to be a valid folder name (no spaces, no weird characters...)
 ProtocolName = 'Perception';
 
-Subjects = 13:17;
-data_dir = '/home/wilson/data/perception/';
-reports_dir = '/home/wilson/research/results/perception/';
+Subjects = 6:17;
+data_dir = '/home/rommel/data/perception/';
+reports_dir = '/home/rommel/research/results/perception/';
 fname_raw = 'run_tsss.fif';
 fname_empty = 'emptyroom_tsss.fif';
 fname_event = 'events_MarkerFile-bst.mat';

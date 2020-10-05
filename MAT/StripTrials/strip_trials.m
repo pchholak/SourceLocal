@@ -1,7 +1,7 @@
 function strip_trials(info, cond, isInit)
 % Strips trials in shorter segments for a given subject and experimental
 % condition specified by the input arguments
-% 
+%
 % Inputs
 %   info.name:    Subject's name [str]
 %   info.root:    Path to the brainstorm study [str]
@@ -15,7 +15,6 @@ end
 
 % Given
 strip_size = 3000; % For 3-second strips
-root_to_stripped = '/home/anakin/Research/Results/SourceLocal/StripTrials';
 
 % Load trials and kernel
 sprintf('Loading time series from trials...')
@@ -28,9 +27,9 @@ N = size(X_all, 3); nt = length(t);
 
 % Create new subject folder and save kernel file
 if isInit
-    mkdir(root_to_stripped, info.name)
+    mkdir(info.root_to_stripped, info.name)
 end
-path_to_stripped = fullfile(root_to_stripped, info.name);
+path_to_stripped = fullfile(info.root_to_stripped, info.name);
 if isInit
     save([path_to_stripped, '/exp_KERNEL_file.mat'], 'K')
 end
