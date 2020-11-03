@@ -1,8 +1,8 @@
 % function SpectralPower_cond(info, cond, f)
 xxx
 iSubj = 5; cond = 'F'; f = 120/9;
-info.root_to_stripped = '/home/wilson/research/results/src_local/StripTrials';
-info.res_path_power = '/home/wilson/research/results/src_local/Power';
+info.root_to_stripped = '/home/rommel/research/results/perception/StripTrials';
+info.res_path_power = '/home/rommel/research/results/perception/Power';
 
 % Given
 Fs = 1000; lcut = 13; hcut = 14;
