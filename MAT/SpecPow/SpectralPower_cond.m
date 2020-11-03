@@ -22,7 +22,7 @@ load([path, '/', kernel_file.name], 'K')
 
 % Loop over each trial
 P = zeros(nV, n_files);
-for q=1:1
+for q=1:n_files
     sprintf('Loading file %d out of %d files', q, n_files)
     load([path, '/', files_cond(q).name], 'F')
     X = F(1:nch, :); % Already demeaned by Brainstorm
