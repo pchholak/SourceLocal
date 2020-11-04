@@ -2,6 +2,8 @@ close all
 clear
 clc
 
+addpath('..')
+
 % Given
 exc = [8, 11];
 subj_indices = 1:17; nsub = length(subj_indices);

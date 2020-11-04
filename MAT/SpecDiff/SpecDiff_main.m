@@ -5,10 +5,10 @@ clc
 addpath('..')
 
 % Given
-exc = [8, 11];
+exc = [];
 subj_indices = 1:17; nsub = length(subj_indices);
 info.res_path_power = '/home/anakin/research/results/perception/Power';
-keywd = 'Coh(120by3s)';
+keywd = 'Pow(120by3s)';
 fscouts = '/home/anakin/data/Perception/scout_V1_V2.mat';
 K = [4.0807, 4.4821, 4.0067, 3.9300, 2.7739, 2.5521, 2.8468, 3.4994, ...
     3.1721, 2.9328, 3.0600, 4.0513, 2.8507, 3.6662, 3.2144, 3.2878, 2.7215];
