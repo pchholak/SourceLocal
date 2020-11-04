@@ -1,14 +1,16 @@
-xxx
+close all
+clear
+clc
 
 % Given
-exc = [8, 10, 11];
+exc = [8, 11];
 subj_indices = 1:17; nsub = length(subj_indices);
-info.res_path_coh = '/home/anakin/Research/Results/SourceLocal/Coherence';
+info.res_path_coh = '/home/rommel/research/results/perception/Coherence';
 keywd = 'Coh(120by3s)';
-fscouts = '/home/anakin/Research/Results/SourceLocal/scout_V1_V2.mat';
+fscouts = '/home/rommel/data/perception/scout_V1_V2.mat';
 K = [4.0807, 4.4821, 4.0067, 3.9300, 2.7739, 2.5521, 2.8468, 3.4994, ...
     3.1721, 2.9328, 3.0600, 4.0513, 2.8507, 3.6662, 3.2144, 3.2878, 2.7215];
-N = 1./K;
+N = 1./K; % Noise
 label_gap = .005;
 
 % Load scout vertices
@@ -22,27 +24,27 @@ info.scout_vert = V;
 
 %% Absolute difference in coherence of areas marked by vertices V
 names = cell(1, nsub);
-ACm = zeros(1, nsub); Cm = ACm;
+Cm = zeros(1, nsub);
 for iSubj=subj_indices
     names{iSubj} = num2str(iSubj);
     info.name = sprintf('sub%02d', iSubj);
-    [AC, C] = SourceDiff_sub(info, keywd);
-    ACm(iSubj) = mean(AC);
+    C = SourceDiff_sub(info, keywd);
     Cm(iSubj) = mean(C);
 end
 
 %% Visualise
 figure
-custom_scatter(N, Cm, exc, label_gap, names);
-xlabel('Noise'), ylabel('C_v')
+[~, lm] = custom_scatter(N, Cm, exc, label_gap, names);
+xlabel('Noise'), ylabel('\DeltaC_{avg}')
 grid
 set(gca, 'FontSize', 14)
+pval = lm.Coefficients.pValue; str_pval = sprintf('p-val = %0.3f', pval(2));
+text(.62, .85, str_pval, 'Units', 'normalized', 'FontSize', 14, 'Color', 'r')
+fname_plot = fullfile(info.res_path_coh, 'Coherence_Noise.png');
+saveas(gcf, fname_plot);
 
 % figure
-% [~, lm] = custom_scatter(log(K), log(ACm), exc, label_gap, names);
-% bfl = lm.Coefficients.Estimate; slp = bfl(2);
-% text(.62, .85, sprintf('Slope = %0.4f', slp), 'Units', 'normalized', ...
-%     'FontSize', 14)
-% xlabel('Log(K)'), ylabel('Log(C_v)')
+% custom_scatter(N, Pm, exc, label_gap, names);
+% xlabel('Noise'), ylabel('P')
 % grid
 % set(gca, 'FontSize', 14)

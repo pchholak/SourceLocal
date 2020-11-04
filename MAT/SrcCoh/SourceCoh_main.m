@@ -1,12 +1,12 @@
-xxx
+close all
+clear
+clc
 
 % Given
-subj_indices = 13:17;
+subj_indices = 1:17;
 f = 120/9;
-info.root_to_stripped = ['/home/anakin/Research/Results/', ...
-    'SourceLocal/StripTrials'];
-info.res_path_coh = ['/home/anakin/Research/Results/', ...
-    'SourceLocal/Coherence'];
+info.root_to_stripped = '/home/rommel/research/results/perception/StripTrials';
+info.res_path_coh = '/home/rommel/research/results/perception/Coherence';
 
 tic
 for iSubj=subj_indices
