@@ -3,9 +3,15 @@ clear
 clc
 
 % Given
+<<<<<<< HEAD
 subj_indices = 1:17;
 info.root = '/home/anakin/brainstorm_db/Perception/data';
 info.root_to_stripped = '/home/anakin/research/results/perception/StripTrials';
+=======
+subj_indices = 2:17;
+info.root = '/home/rommel/brainstorm_db/Perception/data';
+info.root_to_stripped = '/home/rommel/research/results/perception/StripTrials';
+>>>>>>> 7245d0715878c053f601763f29fa5a837677b386
 
 % Loop over each subject and 'B'/'F' trials
 for iSubj=subj_indices

@@ -1,11 +1,23 @@
+<<<<<<< HEAD
 function Pm = SpectralPower_cond(info, cond)
 
+=======
+% function SpectralPower_cond(info, cond, f)
+xxx
+iSubj = 5; cond = 'F'; f = 120/9;
+info.root_to_stripped = '/home/rommel/research/results/perception/StripTrials';
+info.res_path_power = '/home/rommel/research/results/perception/Power';
+>>>>>>> 7245d0715878c053f601763f29fa5a837677b386
 
 % Given
 Fs = 1000; lcut = 13; hcut = 14;
 
 % Estimate trial data size
 sprintf('Estimating trial data size...')
+<<<<<<< HEAD
+=======
+info.name = sprintf('sub%02d', iSubj);
+>>>>>>> 7245d0715878c053f601763f29fa5a837677b386
 path = fullfile(info.root_to_stripped, info.name);
 files_cond = dir([path, '/*_', cond, '_*.mat']);
 n_files = length(files_cond);
@@ -31,11 +43,19 @@ for q=1:n_files
     sprintf('Calculating Power in source space...')
     P(:, q) = (rms(S).^2)';
 end
+<<<<<<< HEAD
 Pm = mean(P, 2);
 
 % Visualise
 figure
 hist(Pm)
+=======
+
+% Visualise
+Pm = mean(P, 2);
+figure
+histogram(P)
+>>>>>>> 7245d0715878c053f601763f29fa5a837677b386
 
 %% Write results
 src = P;
