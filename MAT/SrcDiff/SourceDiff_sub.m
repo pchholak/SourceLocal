@@ -1,4 +1,4 @@
-function [P, dc] = SourceDiff_sub(info, keywd)
+function dc = SourceDiff_sub(info, keywd)
 
 % Locate and list .mat files
 fmatF = dir([info.res_path_coh, '/', keywd, '*_' info.name '_F.mat']);
@@ -11,5 +11,4 @@ load([info.res_path_coh, '/', fmatB(1).name], 'src'); clear fmatB
 srcB = mean(src(info.scout_vert, 1, :),3);
 
 % Evaluate normalized difference of coherence (P)
-P = (srcF - srcB) ./ srcB;
 dc = srcF - srcB;

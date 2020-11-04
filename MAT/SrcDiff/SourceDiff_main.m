@@ -24,12 +24,11 @@ info.scout_vert = V;
 
 %% Absolute difference in coherence of areas marked by vertices V
 names = cell(1, nsub);
-Pm = zeros(1, nsub); Cm = Pm;
+Cm = zeros(1, nsub);
 for iSubj=subj_indices
     names{iSubj} = num2str(iSubj);
     info.name = sprintf('sub%02d', iSubj);
-    [P, C] = SourceDiff_sub(info, keywd);
-    Pm(iSubj) = mean(P);
+    C = SourceDiff_sub(info, keywd);
     Cm(iSubj) = mean(C);
 end
 

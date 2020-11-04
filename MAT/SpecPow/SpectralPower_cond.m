@@ -1,6 +1,5 @@
 function Pm = SpectralPower_cond(info, cond)
 
-
 % Given
 Fs = 1000; lcut = 13; hcut = 14;
 
@@ -31,11 +30,11 @@ for q=1:n_files
     sprintf('Calculating Power in source space...')
     P(:, q) = (rms(S).^2)';
 end
+Pm = mean(P, 2);
 
 % Visualise
-Pm = mean(P, 2);
 figure
-hist(P)
+hist(Pm)
 
 %% Write results
 src = P;
