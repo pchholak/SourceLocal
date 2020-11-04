@@ -1,15 +1,11 @@
-% function SpectralPower_cond(info, cond, f)
-xxx
-iSubj = 5; cond = 'F'; f = 120/9;
-info.root_to_stripped = '/home/rommel/research/results/perception/StripTrials';
-info.res_path_power = '/home/rommel/research/results/perception/Power';
+function Pm = SpectralPower_cond(info, cond)
+
 
 % Given
 Fs = 1000; lcut = 13; hcut = 14;
 
 % Estimate trial data size
 sprintf('Estimating trial data size...')
-info.name = sprintf('sub%02d', iSubj);
 path = fullfile(info.root_to_stripped, info.name);
 files_cond = dir([path, '/*_', cond, '_*.mat']);
 n_files = length(files_cond);
@@ -39,7 +35,7 @@ end
 % Visualise
 Pm = mean(P, 2);
 figure
-histogram(P)
+hist(P)
 
 %% Write results
 src = P;

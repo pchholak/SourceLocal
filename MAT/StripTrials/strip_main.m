@@ -3,9 +3,9 @@ clear
 clc
 
 % Given
-subj_indices = 2:17;
-info.root = '/home/rommel/brainstorm_db/Perception/data';
-info.root_to_stripped = '/home/rommel/research/results/perception/StripTrials';
+subj_indices = 1:17;
+info.root = '/home/anakin/brainstorm_db/Perception/data';
+info.root_to_stripped = '/home/anakin/research/results/perception/StripTrials';
 
 % Loop over each subject and 'B'/'F' trials
 for iSubj=subj_indices
