@@ -10,7 +10,7 @@ files_cond = dir([path, '/*_', cond, '_*.mat']);
 n_files = length(files_cond);
 
 % Extract time 't' from the first trial and Kernel 'K'
-load([path, '/', files_cond(1).name], 'Time'); t = Time;
+% load([path, '/', files_cond(1).name], 'Time'); t = Time;
 kernel_file = dir([path, '/*_KERNEL_*.mat']);
 load([path, '/', kernel_file.name], 'K')
 [nV, nch] = size(K);
@@ -20,7 +20,12 @@ P = zeros(nV, n_files);
 for q=1:n_files
     sprintf('Loading file %d out of %d files', q, n_files)
     load([path, '/', files_cond(q).name], 'F')
-    X = F(1:nch, :); % Already demeaned by Brainstorm
+    X = F(1:nch, :);
+    % Demean data
+    nTimes = size(X,2);
+    X = X - repmat(mean(X,2),[1,nTimes]);
+    % Truncate 0.5 secs from front and rear
+    X(:,[1:500, nTimes-500+1:nTimes]) = [];
     % Bandpass filtering [13,14]-Hz
     X = bpass(X, Fs, lcut, hcut);
     % Calculate time series at each vertex
@@ -38,7 +43,7 @@ hist(Pm)
 
 %% Write results
 src = P;
-fname = sprintf('Pow(120by3s)_%0.1f-%0.1fHz_%s_%s.mat', lcut, hcut, ...
+fname = sprintf('Pow(120by4s)_%0.1f-%0.1fHz_%s_%s.mat', lcut, hcut, ...
     info.name, cond);
 fpath = [info.res_path_power, '/', fname];
 save(fpath, 'src')

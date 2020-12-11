@@ -1,4 +1,4 @@
-function P = SpecDiff_sub(info, keywd)
+function [D, srcF] = SpecDiff_sub(info, keywd)
 
 % Locate and list .mat files
 fmatF = dir([info.res_path_power, '/', keywd, '*_' info.name '_F.mat']);
@@ -11,4 +11,4 @@ load([info.res_path_power, '/', fmatB(1).name], 'src'); clear fmatB
 srcB = mean(src(info.scout_vert, :), 2);
 
 % Evaluate normalized difference of power (P)
-P = (srcF - srcB) ./ srcB;
+D = (srcF - srcB) ./ srcB;

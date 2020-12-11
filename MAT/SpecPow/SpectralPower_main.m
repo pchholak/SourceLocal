@@ -8,7 +8,7 @@ subj_indices = 1:17;
 % info.res_path_power = '/home/rommel/research/results/perception/Power';
 % info.root_to_stripped = '/home/wilson/research/results/src_local/StripTrials';
 % info.res_path_power = '/home/wilson/research/results/src_local/Power';
-info.root_to_stripped = '/home/anakin/research/results/perception/StripTrials';
+info.root_to_stripped = '/home/anakin/research/results/perception/StripTrialsPower';
 info.res_path_power = '/home/anakin/research/results/perception/Power';
 
 for iSubj=subj_indices

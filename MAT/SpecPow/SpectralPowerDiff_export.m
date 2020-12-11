@@ -4,7 +4,7 @@
 %% Given
 sub = 5;
 info.res_path_power = '/home/anakin/research/results/perception/Power/';
-keywd = 'Pow(120by3s)';
+keywd = 'Pow(120by4s)';
 
 %% Locate and list .mat files
 fmatF = dir([info.res_path_power, keywd, '*_sub', sprintf('%02d',sub), '_F.mat']);
