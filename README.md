@@ -2,7 +2,7 @@
 
 This repository contains the codebase for the publication:
 
-Chholak, P., Kurkin, S., Hramov, A., and Pisarchik, A. (2020b). Event-Related
+Chholak, P., Kurkin, S., Hramov, A., and Pisarchik, A. (2020). Event-Related
 Coherence in Visual Cortex and Brain Noise: a MEG study. Appl. Sci.
 (revision phase)
 
@@ -34,5 +34,5 @@ Calculate coherence running SourceLocal/MAT/SrcCoh/SourceCoh_main.m. Set:
 Finally, visualise difference of coherence using SourceLocal/MAT/SrcDiff/SourceDiff_main.m. Set:
 
     • info.res_path_coh = /path_to_results/Coherence/.
-    
+
     • fscouts = /path_to_data/scout_V1_V2.mat.
