@@ -3,7 +3,7 @@
 
 %% Given
 sub = 6;
-info.res_path_coh = '/home/rommel/research/results/perception/Coherence/';
+info.res_path_coh = '/home/username/research/results/perception/Coherence/';
 keywd = 'Coh(120by3s)';
 
 %% Locate and list .mat files

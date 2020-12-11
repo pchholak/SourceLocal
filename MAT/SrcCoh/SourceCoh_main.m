@@ -5,8 +5,8 @@ clc
 % Given
 subj_indices = 1:17;
 f = 120/9;
-info.root_to_stripped = '/home/rommel/research/results/perception/StripTrials';
-info.res_path_coh = '/home/rommel/research/results/perception/Coherence';
+info.root_to_stripped = '/home/username/research/results/perception/StripTrials';
+info.res_path_coh = '/home/username/research/results/perception/Coherence';
 
 tic
 for iSubj=subj_indices

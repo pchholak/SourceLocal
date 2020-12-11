@@ -7,9 +7,9 @@ addpath('..')
 % Given
 exc = [8, 11];
 subj_indices = 1:17; nsub = length(subj_indices);
-info.res_path_coh = '/home/rommel/research/results/perception/Coherence';
+info.res_path_coh = '/home/username/research/results/perception/Coherence';
 keywd = 'Coh(120by3s)';
-fscouts = '/home/rommel/data/perception/scout_V1_V2.mat';
+fscouts = '/home/username/data/perception/scout_V1_V2.mat';
 K = [4.0807, 4.4821, 4.0067, 3.9300, 2.7739, 2.5521, 2.8468, 3.4994, ...
     3.1721, 2.9328, 3.0600, 4.0513, 2.8507, 3.6662, 3.2144, 3.2878, 2.7215];
 N = 1./K; % Noise

@@ -3,7 +3,7 @@
 
 %% Given
 sub = 5;
-info.res_path_power = '/home/anakin/research/results/perception/Power/';
+info.res_path_power = '/home/username/research/results/perception/Power/';
 keywd = 'Pow(120by4s)';
 
 %% Locate and list .mat files
