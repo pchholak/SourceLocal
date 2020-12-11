@@ -5,7 +5,8 @@ clc
 % Given
 subj_indices = 1:17;
 info.root = '/home/anakin/brainstorm_db/Perception/data';
-info.root_to_stripped = '/home/anakin/research/results/perception/StripTrials';
+info.root_to_stripped = ['/home/anakin/research/results/perception/', ...
+    'StripTrialsPower'];
 
 % Loop over each subject and 'B'/'F' trials
 for iSubj=subj_indices
