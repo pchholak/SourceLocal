@@ -2,11 +2,11 @@
 
 This repository contains the codebase for the publication:
 
-Chholak, P., Kurkin, S., Hramov, A., and Pisarchik, A. (2020). Event-Related
-Coherence in Visual Cortex and Brain Noise: a MEG study. Appl. Sci.
-(revision phase)
+Chholak, P., Kurkin, S.A., Hramov, A.E., Pisarchik, A.N. (2020). Event-Related
+Coherence in Visual Cortex and Brain Noise: An MEG Study. Appl. Sci. 2020, 0, 5.
+https://doi.org/10.3390/app0010005
 
-To run the analyses on your computer after cloning this repository, follow the
+To run the analyses in Brainstorm on your computer after cloning this repository, follow the
 following steps:
 
 Save the data (/path_to_data/) in /home/username/data/perception/.
